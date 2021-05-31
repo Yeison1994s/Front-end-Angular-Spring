@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaComponent } from './imagen/lista.component';
@@ -8,9 +7,10 @@ import { NuevaComponent } from './imagen/nueva.component';
 import { DetalleComponent } from './imagen/detalle.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//import { ToastrModule } from 'ngx-toastr';
 // external
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -18,6 +18,8 @@ import {
   SwiperModule, SwiperConfigInterface,
   SWIPER_CONFIG
 } from 'ngx-swiper-wrapper';
+import { EditarImagenComponent } from './imagen/editar-imagen.component';
+import { ListComponent } from './imagen/list.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -27,13 +29,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   slidesPerView: 1,
   centeredSlides: true
 };
-
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
     NuevaComponent,
-    DetalleComponent
+    DetalleComponent,
+    EditarImagenComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NgxSpinnerModule,
     BrowserAnimationsModule,
     SwiperModule
+
   ],
   entryComponents: [DetalleComponent],
   providers: [

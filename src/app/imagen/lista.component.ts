@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Imagen } from '../models/imagen';
 import { ImagenService } from '../services/imagen.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -11,9 +11,9 @@ import { DetalleComponent } from './detalle.component';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
+  @Input() imagenes: any;
 
-  imagenes: Imagen[] = [];
-
+  //imagenes: Imagen[] = [];
   constructor(
     private imagenService: ImagenService,
     private spinner: NgxSpinnerService,
@@ -21,9 +21,8 @@ export class ListaComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-   this.cargarImagenes();
+  this.cargarImagenes(); 
   }
-
   cargarImagenes(): void {
     this.imagenService.list().subscribe(
       data => {
@@ -31,7 +30,6 @@ export class ListaComponent implements OnInit {
       }
     );
   }
-
   borrar(id: number): void {
     this.spinner.show();
     this.imagenService.delete(id).subscribe(
@@ -45,10 +43,10 @@ export class ListaComponent implements OnInit {
       }
     );
   }
-
   abrirModal(i: number): void {
     const modalRef = this.modalService.open(DetalleComponent);
     modalRef.componentInstance.index = i;
   }
-
 }
+
+

@@ -11,7 +11,7 @@ import { Imagen } from '../models/imagen';
 })
 export class DetalleComponent implements OnInit {
 
-  @Input() index;
+  @Input() imagen:any;
 
   imagenes: Imagen[] = [];
 
@@ -31,10 +31,12 @@ export class DetalleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.config.initialSlide = this.index;
+
+    this.config.initialSlide = this.imagen;
     this.imagenService.list().subscribe(
       data => {
         this.imagenes = data;
+       // this.imagen.imagen =`http://localhost:3333/images/products/${this.imagen.imagen}`;
       },
       err => {
         console.log(err);

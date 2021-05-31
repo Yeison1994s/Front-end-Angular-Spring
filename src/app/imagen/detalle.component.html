@@ -9,12 +9,12 @@
     <swiper [config]="config">
         <div *ngFor="let imagen of imagenes" class="swiper-slide">
           <div class="thumbnail text-center">
-            <img class="img-thumbnail img-rounded" src="{{imagen.imagenUrl}}" alt="">
+            <img class="img-thumbnail img-rounded" [src]="imagen.imagen" alt=""/>
           </div>
         </div>
       </swiper>
-
 </div>
+
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-info btn-block"
     (click)="activeModal.dismiss()"><i class="fas fa-window-close"></i> Cerrar</button>

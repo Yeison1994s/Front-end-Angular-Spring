@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="CommitDialog.authorValues">
+		<item value="estiv &lt;estiv@DESKTOP-4NC72SM&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="estiv &lt;estiv@DESKTOP-4NC72SM&gt;"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\estiv\Documents\cloudinaryrest\.git">
+			<item value="false"/>
+			<item value="estiv &lt;estiv@DESKTOP-4NC72SM&gt;"/>
+			<item value="Backend Spring-Boot"/>
+			<item value="estiv &lt;estiv@DESKTOP-4NC72SM&gt;"/>
+			<item value="4cd83316b24e833a49ee3b2ad15aa4d78febaee7"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
+</section>
