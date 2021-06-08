@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ListaComponent } from './imagen/lista.component';
 import { NuevaComponent } from './imagen/nueva.component';
 import { DetalleComponent } from './imagen/detalle.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +18,8 @@ import {
   SWIPER_CONFIG
 } from 'ngx-swiper-wrapper';
 import { EditarImagenComponent } from './imagen/editar-imagen.component';
-import { ListComponent } from './imagen/list.component';
+import { ListasComponent } from './imagenes/listas.component';
+import { ButtonComponent } from './Buttons/button.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -36,7 +36,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NuevaComponent,
     DetalleComponent,
     EditarImagenComponent,
-    ListComponent
+    ListasComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

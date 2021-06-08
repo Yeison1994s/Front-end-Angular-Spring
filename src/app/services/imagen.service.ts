@@ -29,6 +29,10 @@ export class ImagenService {
   public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.imagenURL + `${id}`);
   }
+
+  public getproductos(){
+    return this.httpClient.get<any>(this.imagenURL + 'get');
+  } 
   
   public getProductById(id:number): Observable<any>{
     return this.httpClient.get<any>(this.imagenURL+ `${id}/id`);

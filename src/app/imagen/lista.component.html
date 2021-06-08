@@ -1,8 +1,11 @@
-
-<div class='mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet' *ngFor="imagen of imagenes">
-  <app-list [imagen]="imagen"></app-list>
-
+<!--<listas [title]="'guardar'"><listas>-->
+<div class="row">
+    <div class="col-md-4" *ngFor="let listas of listass; index as i">
+    <listas [listas]="listas"></listas>
 </div>
-
-
-
+</div>
+<!--
+<ul *ngFor="let listas of listass">
+<listas [listas]="listas"></listas>
+</ul>
+-->

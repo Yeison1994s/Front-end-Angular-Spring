@@ -11,7 +11,7 @@ import { Imagen } from '../models/imagen';
 })
 export class DetalleComponent implements OnInit {
 
-  @Input() imagen:any;
+  @Input() listas:any;
 
   imagenes: Imagen[] = [];
 
@@ -32,7 +32,10 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit() {
 
-    this.config.initialSlide = this.imagen;
+    this.config.initialSlide = this.listas;
+
+
+/*
     this.imagenService.list().subscribe(
       data => {
         this.imagenes = data;
@@ -43,5 +46,7 @@ export class DetalleComponent implements OnInit {
       }
     );
   }
+*/
 
+  }
 }

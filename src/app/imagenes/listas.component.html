@@ -1,0 +1,20 @@
+<!--https://victorroblesweb.es/2016/11/07/input-output-angular-2/-->
+<!--
+ <button class="button buton">{{title}}</button>
+-->
+        <div class="card mb-3 animated zoomIn">
+            <h3 class="card-header">{{listas.name}}</h3>
+            <div class="card-body">
+              <h5 class="card-title"><b>ID: </b>{{listas.description}}</h5>
+            </div>
+            <div class="card-body text-center">
+            <img style="height: 200px; width: 100%; display: block;" src="{{listas.imagen}}" alt="Card image">
+            </div>
+            
+            <div class="card-body d-flex justify-content-between">
+              <button class="btn btn-outline-primary" (click)="abrirModal(i)"><i class="far fa-eye"></i> Ver</button>
+            </div>
+            <div class="card-footer text-center">
+              &copy; marca personal
+            </div>        
+    </div>
