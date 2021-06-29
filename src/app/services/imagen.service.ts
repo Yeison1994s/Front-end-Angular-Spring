@@ -17,12 +17,17 @@ export class ImagenService {
   public list(): Observable<Imagen[]> {
     return this.httpClient.get<Imagen[]>(this.imagenURL + 'list');
   }
-  public save(imagen: File,name:string,description:string): Observable<any> {
+  public save(imagen: File,name_mascotas:string,propietario_mascotas:string,sexo_mascotas:string,edad_mascotas:string): Observable<any> {
     const formData = new FormData();
     //formData.append('multipartFile', imagen);
     formData.append('imagen', imagen);
-    formData.append('name',name);
-    formData.append('description',description);
+    formData.append('name_mascota',name_mascotas);
+    formData.append('propietario_mascotas',propietario_mascotas);
+    formData.append('sexo_mascotas',sexo_mascotas);
+    formData.append('edad_mascotas',edad_mascotas);
+
+    
+
     return this.httpClient.post<any>(this.imagenURL + 'upload', formData);
   }
 
@@ -47,13 +52,20 @@ export class ImagenService {
  public update(id: number, imagen: Imagen): Observable<any> {
     return this.httpClient.put<any>(this.imagenURL + `${id}/details`, imagen);
   }
+  //Update bueno funcionando
+   public update(id:number, imagen: Imagen): Observable<any>{
+    return this.httpClient.put<any>(this.imagenURL + `${id}/update`, imagen);
+    }
   */
   public detail(id: number): Observable<Imagen> {
     return this.httpClient.get<Imagen>(this.imagenURL + `${id}`);
   }
-
+/*  updatePost(id: string, title: string, content: string, image: File | string) {
+*/
   public update(id:number, imagen: Imagen): Observable<any>{
     return this.httpClient.put<any>(this.imagenURL + `${id}/update`, imagen);
-    }
+    
+
+  }
 
 }

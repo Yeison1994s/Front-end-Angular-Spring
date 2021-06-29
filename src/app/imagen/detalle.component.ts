@@ -5,13 +5,13 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Imagen } from '../models/imagen';
 
 @Component({
-  selector: 'app-detalle',
+  selector: 'detalle',
   templateUrl: './detalle.component.html',
   styleUrls: ['./detalle.component.css']
 })
 export class DetalleComponent implements OnInit {
 
-  @Input() listas:any;
+  @Input() index;
 
   imagenes: Imagen[] = [];
 
@@ -31,22 +31,18 @@ export class DetalleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.config.initialSlide = this.listas;
-
-
-/*
-    this.imagenService.list().subscribe(
+    this.config.initialSlide = this.index;
+    this.imagenService.getproductos().subscribe(
       data => {
         this.imagenes = data;
-       // this.imagen.imagen =`http://localhost:3333/images/products/${this.imagen.imagen}`;
+       console.log(data);
+
       },
       err => {
         console.log(err);
       }
     );
   }
-*/
 
-  }
+  
 }

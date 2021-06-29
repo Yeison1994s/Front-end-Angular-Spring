@@ -20,6 +20,7 @@ import {
 import { EditarImagenComponent } from './imagen/editar-imagen.component';
 import { ListasComponent } from './imagenes/listas.component';
 import { ButtonComponent } from './Buttons/button.component';
+import { CardsHeaderComponent } from './Header/cards-header/cards-header.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -37,7 +38,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DetalleComponent,
     EditarImagenComponent,
     ListasComponent,
-    ButtonComponent
+    ButtonComponent,
+    CardsHeaderComponent
   ],
   imports: [
     BrowserModule,

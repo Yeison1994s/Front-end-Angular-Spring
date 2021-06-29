@@ -16,9 +16,12 @@ export class NuevaComponent implements OnInit {
   @ViewChild('imagenInputFile', {static: false}) imagenFile: ElementRef;
   //image: File;
   imagenMin: File;
-  name='';
-  description='';
+  name_mascota='';
+  propietario_mascotas='';
+  sexo_mascotas='';
+  edad_mascotas ='';
   imagen:File;
+  private id:number;
 
   constructor(
     private imagenService: ImagenService,
@@ -39,7 +42,7 @@ export class NuevaComponent implements OnInit {
   }
  
   onCreate(): void {
-    this.imagenService.save(this.imagen,this.description,this.name).subscribe(
+    this.imagenService.save(this.imagen,this.name_mascota,this.propietario_mascotas,this.sexo_mascotas,this.edad_mascotas).subscribe(
       data => {
         this.spinner.hide();
         this.router.navigate(['/']);
@@ -51,7 +54,18 @@ export class NuevaComponent implements OnInit {
       }
     );
   }
+  /*
+  onUpdate(): void {
 
+  this.imagenService.update(this.id,this.imagen,this.name_mascota,this.propietario_mascotas,this.edad_mascotas,this.sexo_mascotas)
+  .subscribe(
+    date => {
+      this.spinner.hide();
+      this.router.navigate(['/']);
+    }
+  ); 
+  }
+  */
   reset(): void {
     this.imagen = null;
     this.imagenMin = null;

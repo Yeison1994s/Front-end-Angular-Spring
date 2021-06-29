@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-//import { SOLID_BUTTON_TYPE_ENUM } from './solid-button-type.enum';
+import { SOLID_BUTTON_TYPE_ENUM } from './solid-button-type.enum';
 
 @Component({
   selector: 'button-list',
@@ -7,9 +7,9 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent  {
-//@Input() title ='';
-//@Input() type:SOLID_BUTTON_TYPE_ENUM = SOLID_BUTTON_TYPE_ENUM.PRIMARY;
-
+@Input() title ='';
+@Input() type:SOLID_BUTTON_TYPE_ENUM = SOLID_BUTTON_TYPE_ENUM.PRIMARY;
+@Input() url;
   constructor() { }
 
 

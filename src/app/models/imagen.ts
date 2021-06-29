@@ -1,14 +1,12 @@
 export class Imagen {
-    //id?: number;
+    id: Number ;
     imagen: string;
-    name: string;
-    description: string;
+    name_mascotas:string;
+    propietario_mascotas: string;
+    sexo_mascotas:string;
+    edad_mascotas:string;
    
-    constructor(imagen:string,name:string,description:string){
-        this.imagen = imagen;
-        this.name = name;
-        this.description = description;
-    }
+   
  
     
 }

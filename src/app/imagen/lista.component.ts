@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleComponent } from './detalle.component';
 import { ActivatedRoute, Router } from "@angular/router";
+import { SOLID_BUTTON_TYPE_ENUM } from '../Buttons/solid-button-type.enum';
 
 @Component({
   selector: 'app-lista',
@@ -14,7 +15,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class ListaComponent implements OnInit {
   //@Input() imagenes: any; https://codingpotions.com/angular-comunicacion-componentes
   //Herencia COMPONENTE PADRE
-  //imagenes: Imagen[] = [];
+  public $btnTypes = SOLID_BUTTON_TYPE_ENUM;
   listass: any = [];
 
   constructor(
@@ -38,6 +39,8 @@ export class ListaComponent implements OnInit {
       }
     )
   }
+
+  
   onDelete = () => {
     this.imagenService.delete(this.route.snapshot.params.id).subscribe(
       product => {
@@ -47,38 +50,25 @@ export class ListaComponent implements OnInit {
       }
     );
   };
+
+  
   borrar(id: number): void {
     this.imagenService.delete(id).subscribe(
       data => {
-        this.getListass();
+        this.listass;
       },
       err => {
         console.log(err);
       }
     );
   }
-  /*
-  cargarImagenes(): void {
-    this.imagenService.list().subscribe(
-      data => {
-        this.imagenes = data;
-      }
-    );
+
+ abrirModal(i: number): void {
+    const modalRef = this.modalService.open(DetalleComponent);
+    modalRef.componentInstance.index = i;
   }
-  borrar(id: number): void {
-    this.spinner.show();
-    this.imagenService.delete(id).subscribe(
-      data => {
-        this.spinner.hide();
-        this.cargarImagenes();
-      },
-      err => {
-        this.spinner.hide();
-        console.log(err);
-      }
-    );
-  }
-  */
+
+  
 }
 
 

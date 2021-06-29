@@ -1,11 +1,33 @@
-<!--<listas [title]="'guardar'"><listas>-->
 <div class="row">
     <div class="col-md-4" *ngFor="let listas of listass; index as i">
+      <div class="card mb-3 animated zoomIn">
+        <h3 class="card-header">{{listas.name_mascotas}}</h3>
+        <div class="card-body"></div>
+        <h5 class="card-title"><b>ID: </b>{{listas.propietario_mascotas}}</h5>
+        <div class="card-body"></div>
+        <h5 class="card-title"><b>ID: </b>{{listas.sexo_mascotas}}</h5>
+           <div class="card-body"></div>
+        <h5 class="card-title"><b>ID: </b>{{listas.edad_mascotas}}</h5>
+    </div>
     <listas [listas]="listas"></listas>
+        <div class="btn-group">
+            <button-list [title]="'Ver'"
+                [type]="$btnTypes.SUCCESS"
+                (click)="abrirModal(i)">
+            </button-list>
+            <button-list [title]="'Editar'"
+                routerLink="/update/{{listas.id}}"
+                [type]="$btnTypes.PRIMARY">
+            </button-list>
+            <button-list 
+                [title]="'Eliminar'"
+                [type]="$btnTypes.DANGER"
+                (click)="borrar(listas.id)">
+            </button-list>
+        </div>
+    </div>
+    <!--
+    <cards-header [header]="header"></cards-header>
+    -->
+  </div>
 </div>
-</div>
-<!--
-<ul *ngFor="let listas of listass">
-<listas [listas]="listas"></listas>
-</ul>
--->

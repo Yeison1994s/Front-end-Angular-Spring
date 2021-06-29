@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { Imagen } from '../models/imagen';
 import { ImagenService } from '../services/imagen.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarImagenComponent implements OnInit {
 
   imagen:Imagen = null;
-  
+  name='';
+  description='';
+  Imagen:File;
+  private id:number;
+
   message = '';
 
   constructor(
@@ -43,9 +47,26 @@ export class EditarImagenComponent implements OnInit {
       }
     );
   }
+
+onDelete(): void {
+  const id = this.activatedRoute.snapshot.params.id;
+    this.imagenService.delete(id).subscribe(
+      data => {
+        this.router.navigate(["/"]);
+      },
+      err => {
+         console.log(err);
+         this.message ="The tutorial was updated default!";
+      }
+    );
+  };
+
+
+//this.imagen,this.description,this.name
+//id,this.imagen
    onUpdate(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    this.imagenService.update(id, this.imagen).subscribe(
+    this.imagenService.update(id,this.imagen).subscribe(
       data =>{
         console.log(data);
         this.imagen = data;
